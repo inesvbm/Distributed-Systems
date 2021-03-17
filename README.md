@@ -23,24 +23,24 @@ Web browser based on a Client-Server architecture. It allows automatic indexing 
 Allows users to access the Web search features. 
 
 ### RMI_interface_client_methods
-Implements RMIClient interface - specifies RMIClient methods.
+Implements ```RMIClient``` interface - specifies RMIClient methods.
 
 ### RMI_interface_server_methods
-Implements RMIServer interface - specifies RMIServer methods.
+Implements ```RMIServer``` interface - specifies RMIServer methods.
 
 ### RMIServer
-- Communicates with RMIClient through remote methods (receives Client requests and sends MulticastServer answers).
-- Communicates with MulticastServer through two multicast sockets: send and receive info in UDP datagrams. How to process a request:
-    1) RMIClient sends request;
-    2) RMIServer receives the client request and asks MulticastServer it's multicast Id, through a
+- Communicates with ```RMIClient``` through remote methods (receives Client requests and sends ```MulticastServer``` answers).
+- Communicates with ```MulticastServer``` through two multicast sockets: send and receive info in UDP datagrams. How to process a request:
+    1) ```RMIClient``` sends request;
+    2) ```RMIServer``` receives the client request and asks ```MulticastServer``` it's multicast Id, through a
        binded socket;
     3) After receive the multicast ID, the socket is closed. It is opened a new binded socket to send
-       the client request to the MulticastServer;
-    4) Receives and handles the answer from MulticastServer to send it back to the client.
-- A 30s Time Out is set, in case MulticastServer delays the answer.
+       the client request to the ```MulticastServer```;
+    4) Receives and handles the answer from ```MulticastServer``` to send it back to the client.
+- A 30s Time Out is set, in case ```MulticastServer``` delays the answer.
 
 ### MulticastServer
-Receives Id requests and client requests from RMIServer. After receiving a request, it will send it to RequestHandler thread, which syncronizes request handling. This class stores the following info:
+Receives Id requests and client requests from ```RMIServer```. After receiving a request, it will send it to ```RequestHandler``` thread, which syncronizes request handling. This class stores the following info:
 - Registered clients
 - Logged clients
 - Word inverted index
@@ -49,10 +49,11 @@ Receives Id requests and client requests from RMIServer. After receiving a reque
 This way, in case of failure, all client data is written in serializable object files: there is a thread that listens if the application fails and in this case, the data is immediately stored in files. When the application starts, the files are read and the data is stored in structures.
 
 ### RequestHandler
-This class is a thread. For each request, a new thread from this class is created and will handle the specific request. If it is a multicast Id request, an Id will be generated and sent to the RMIServer; if it is a client request, it will check if the multicast Id received with the client request is the same that was generated before. If yes, it will handle the request. If not, it will ignore it, since the request will be in charge of another MulticastServer.
+This class is a thread. For each request, a new thread from this class is created and will handle the specific request. If it is a multicast Id request, an Id will be generated and sent to the ```RMIServer```; if it is a client request, it will check if the multicast Id received with the client request is the same that was generated before. If yes, it will handle the request. If not, it will ignore it, since the request will be in charge of another MulticastServer.
 
 ### InternetAccess
-Jsoup file to read and extract info from HTML files. It will send info to RequestHandler, for URL indexing and/or searches.
+Jsoup file to read and extract info from HTML files. It will send info to ```RequestHandler```, for URL indexing and/or searches.
+
 
 
 ## Features
