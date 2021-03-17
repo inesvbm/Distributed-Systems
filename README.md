@@ -19,3 +19,6 @@ Web browser based on a Client-Server architecture. It allows automatic indexing 
 ## Architecture
 ![image](https://user-images.githubusercontent.com/41116942/111530353-15a76e00-875b-11eb-9487-1e5d81582503.png)
 
+```bash
+MulticastServer.java
+```
