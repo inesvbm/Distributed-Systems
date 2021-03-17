@@ -13,12 +13,8 @@ Web browser based on a Client-Server architecture. It allows automatic indexing 
 
 ## Build and run
 - compile all files: compile.bat
-- run ```bash MulticastServer.java```, ```bash RequestHandler.java```, ```bash InternetAccess.java```, -cp ".;./jsoup-1.12.1.jar" file_name
-- run all other files: java file_name localhost
+- run ```bash MulticastServer.java```, ```bash RequestHandler.java```, ```bash InternetAccess.java```, with ```-cp ".;./jsoup-1.12.1.jar" file_name```
+- run all other files: ```java file_name localhost```
 
 ## Architecture
 ![image](https://user-images.githubusercontent.com/41116942/111530353-15a76e00-875b-11eb-9487-1e5d81582503.png)
-
-```bash
-MulticastServer.java
-```
