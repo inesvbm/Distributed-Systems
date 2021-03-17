@@ -3,7 +3,7 @@ Web browser based on a Client-Server architecture. It allows automatic indexing 
 
 ## Prerequisites
 - Java Development Kit (JDK) - https://www.oracle.com/java/technologies/javase-downloads.html
-- Eclipse Neon 2016 - Eclipse IDE for Java EE Developers
+- Eclipse Neon 2016 - Eclipse IDE for Java EE Developers - https://www.eclipse.org/neon/
 - Jsoup library - https://jsoup.org/download
 
 ## Installation
@@ -15,3 +15,7 @@ Web browser based on a Client-Server architecture. It allows automatic indexing 
 - compile all files: compile.bat
 - run ```bash MulticastServer.java```, ```bash RequestHandler.java```, ```bash InternetAccess.java```, -cp ".;./jsoup-1.12.1.jar" file_name
 - run all other files: java file_name localhost
+
+## Architecture
+![image](https://user-images.githubusercontent.com/41116942/111530353-15a76e00-875b-11eb-9487-1e5d81582503.png)
+
