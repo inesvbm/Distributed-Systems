@@ -1,0 +1,10 @@
+java 1.8.0
+Eclipse Neon 2016 - Eclipse IDE for Java EE Developers
+
+projeto testado em linha de comandos:
+
+- packages estão comentadas em todo o código fonte
+- na pasta do código fonte está também o ficheiro .jar do jsoup
+- compilar todos os ficheiros: compile.bat (pasta docs)
+- correr MulticastServer.java---RequestHandler.java---InternetAccess.java: java -cp ".;./jsoup-1.12.1.jar" nome_ficheiro 
+- correr restante código fonte: java nome_ficheiro localhost
